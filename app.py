@@ -59,6 +59,4 @@ def cardapio():
 app.run(debug=True)
 
 
-# SEXO A RODO
-# buceta cabeluda Amem
-#gustavo
+# SOMOS DE DEUS
