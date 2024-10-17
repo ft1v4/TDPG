@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Upload de Imagem</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='upload.css')}}">
+
+</head>
+
+<body>
+    <h1 class="title">Upload de Imagem</h1>
+    <form id='form1' action="/upload" method="post" enctype="multipart/form-data" class="boxF">
+
+        <div class="boxInt">
+
+            <div class="file-upload">
+                <label for="file-input" class="custom-file-upload">
+                    Procurar Imagem...
+                </label>
+                <input id="file-input" type="file" accept="image/*" name="imagem" onchange="previewImage(event)" />
+            </div>
+
+            <input type="date" name="data_inicial" required id="input">
+            <input type="date" name="data_final" required id="input">
+        </div>
+
+        <button type="submit" id="btng">Enviar</button>
+            
+    <div class="boxCOM">
+        <div class="boxCO">
+            <h3 style="text-align: center;">Imagem inserida com sucesso ✅</h3>
+            <button id="btnfechar" class="btnCC" type="submit">Fechar</button>
+        </div>
+    </div>
+      
+    </form>
+
+
+    <div class="boxIMAGE">
+        <h2 class="title" style="color: black;margin: 0; margin-top: 0;">Imagem Selecionada:</h2>
+        <img id="image-preview" class="image-preview" src="#" alt="Pré-visualização da imagem" />
+    </div>
+
+
+
+    <form action="/imagens" method="get">
+        <button type="submit" id="ver">
+            <img src="https://cdn-icons-png.flaticon.com/512/3342/3342176.png" alt="" width="40" height="40">
+        </button>
+    </form>
+
+</body>
+<script src="{{url_for('static', filename = 'index.js')}}"></script>
+
+</html>

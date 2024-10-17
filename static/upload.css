@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: rgb(67, 67, 67);
+}
+
+.title {
+    text-align: center;
+    margin: 20px;
+    margin-top: 3%;
+    color: white;
+    font-weight: 0;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+
+.boxF {
+    background-color: rgb(162, 162, 162);
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 360px;
+    margin: 0 auto;
+    margin-top: 7%;
+    border-radius: 8px;
+}
+
+#input {
+    width: 250px;
+    background-color: white;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxInt {
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    justify-content: space-between;
+}
+
+.file-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#file-input {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #393939;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+
+.custom-file-upload:hover {
+    background-color: #0c0c0c;
+}
+
+#btng {
+    padding: 10px;
+    background-color: #393939;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    margin-top: 30px;
+}
+
+#ver {
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    background-color: azure;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+.image-preview {
+    max-width: 300px;
+    max-height: 300px;
+    border: 1px solid #ddd;
+    display: none;
+    border-radius: 5px;
+}
+
+.boxIMAGE {
+    position: absolute;
+    top: 35%;
+    left: 3%;
+    background-color: rgb(162, 162, 162);
+    border-radius: 5px;
+    padding: 20px;
+    display: none;
+}
+
+
+.boxCOM {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.boxCOM_flex {
+    display: flex;
+}
+
+.boxCO {
+    background-color: white;
+    width: 35%;
+    height: 40%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.btnCC{
+    margin-top: 50px;
+    background-color: green;
+    width: 30%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+    cursor: pointer;
+
+}
