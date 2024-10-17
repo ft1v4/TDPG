@@ -59,4 +59,3 @@ def cardapio():
 app.run(debug=True)
 
 
-# SOMOS DE DEUS
