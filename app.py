@@ -51,11 +51,25 @@ def desperdicio():
     return render_template('insert.html')
 
 
-@app.route('/cardapio')
-def cardapio():
+@app.route('/agenda', methods=['POST', 'GET'])
+def mostrar_agenda():
+    if request.method == 'POST':
+        print('Gerou a agenda com sucesso')
+        data = request.form['data']
+        print(data)
+        imagens_base64 = pythonBanco.puxardata(data)
+        return render_template('mariane.html', imagens_base64 = imagens_base64)
+    
     return render_template('mariane.html')
+   
+        
 
 
 app.run(debug=True)
 
 
+
+    
+
+
+        

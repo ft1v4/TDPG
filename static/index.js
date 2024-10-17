@@ -5,7 +5,7 @@ const boxCOM = document.querySelector('.boxCOM');
 const cardapioBTN = document.getElementById('cardapio')
 
 cardapioBTN.addEventListener('click',()=>{
-    window.location = '/cardapio'
+    window.location = '/agenda'
 })
 
 function previewImage(event) {
