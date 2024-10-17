@@ -1,11 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{url_for('static' , filename='styles.css')}}">
 </head>
+
 <body>
-   <p>Data:</p>
+
+    <div class="topo">
+        <img src="https://www.sesisp.org.br/images/Sesi-SP.jpg" alt="logo" width="200vw" height="50vh"
+            style="margin-left: 40px; cursor: pointer;">
+        <div class="back">
+            <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="45vw" height="45vh"
+                style=" cursor: pointer;" id="user" />
+        </div>
+    </div>
+
+    <div class="config">
+        <h2>Configurações</h2>
+        <div
+            style="border-bottom: 2px solid black;  display: flex;width: 90%;justify-content: start; align-items: center;padding-bottom: 5px;padding-left: 30px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="45vw" height="45vh" />
+            <h3 style="margin-left: 10px;">Editar perfil</h3>
+        </div>
+
+        <div
+            style="border-bottom: 2px solid black;  display: flex;width: 90%;justify-content: start; align-items: center; height: 40px;padding-bottom: 5px;padding-left: 30px;padding-top: 5px;">
+
+            <label class="switch">
+                <input type="checkbox" id="toggleSwitch">
+                <span class="slider"></span>
+            </label>
+
+
+            <h3 style="margin-left: 30px;">Tema Claro</h3>
+        </div>
+
+        <div
+            style="border-bottom: 2px solid black; display: flex;width: 90%;justify-content: start; align-items: center; height: 40px; padding-left: 30px;padding-bottom: 5px;padding-top: 5px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/5882/5882911.png" width="35w" height="35vh" />
+            <h3 style="margin-left: 10px;">Alterar senha</h3>
+        </div>
+
+        <div
+            style="border-bottom: 2px solid black; display: flex;width: 90%;justify-content: start; align-items: center; height: 40px; padding-left: 30px;padding-bottom: 5px;padding-top: 5px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828427.png" width="35w" height="35vh" />
+            <h3 style="margin-left: 10px;">Sair da conta</h3>
+        </div>
+
+
+
+    </div>
+    <form action="/agenda" method="post">
+        <div class="ju">
+            <div class="li">
+                <h2 style="margin-right: 10px;">Insira a data desejada :</h2>
+                <input type="date" class="inp">
+                <button id="bH"><img src="https://cdn-icons-png.flaticon.com/512/64/64673.png" alt="" id="imgLL"></button>
+            </div>
+        </div>
+    </form>
+
+
+
+    <div class="func">
+        <div class="irg">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="25vw" height="25vh" />
+            <p style="font-size: 13px;">Home</p>
+        </div>
+
+        <div class="irg" id="cardapio">
+            <img src="https://cdn-icons-png.flaticon.com/512/1046/1046849.png" width="25vw" height="25vh" />
+            <p style="font-size: 13px;">Cardápio</p>
+        </div>
+
+
+        <div class="irg">
+            <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" width="25vw" height="25vh" id="config" />
+            <p style="font-size: 13px;">Configuração</p>
+        </div>
+
+        <div class="irg">
+            <img src="https://cdn-icons-png.flaticon.com/512/2907/2907313.png" width="25vw" height="25vh" />
+            <p style="font-size: 13px;">Desperdício</p>
+        </div>
+    </div>
+
 </body>
+
+<script src="../js/iconUser.js"></script>
+<script src="../js/mariane.js"></script>
+<script src="{{url_for('static',  filename = 'index.js')}}"></script>
+
 </html>
