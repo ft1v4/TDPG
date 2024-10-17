@@ -47,5 +47,7 @@ def select_imagens():
     
     return imagens_base64
 
-
+def puxardata(data):
+    resultado = cursor.execute(f"SELECT data_inicial, data_final FROM cardapio where {data} ").fetchall()
+    return resultado
   
