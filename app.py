@@ -55,7 +55,21 @@ def desperdicio():
 def cardapio():
     return render_template('mariane.html')
 
+@app.route('/agenda', methods=['POST', 'GET'])
+def mostrar_agenda():
+    if request.method == 'POST':
+        print('Gerou a agenda com sucesso')
+        data = request.form['data']
+        pythonBanco.puxardata(data)
+        return render_template('mariane.html')
+    return render_template('mariane.html')
+
 
 app.run(debug=True)
 
 
+
+    
+
+
+        
