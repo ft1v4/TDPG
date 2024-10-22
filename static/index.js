@@ -1,11 +1,16 @@
-const btng =  document.getElementById('btng');
+const btng = document.getElementById('btng');
 const form1 = document.getElementById('form1');
 const btnfechar = document.getElementById('btnfechar');
 const boxCOM = document.querySelector('.boxCOM');
 const cardapioBTN = document.getElementById('cardapio')
+const btnAlterar = document.getElementById('ioio')
 
-cardapioBTN.addEventListener('click',()=>{
+cardapioBTN.addEventListener('click', () => {
     window.location = '/agenda'
+})
+
+btnAlterar.addEventListener('click', () => {
+    window.location = '/gerar-agenda'
 })
 
 function previewImage(event) {
@@ -38,21 +43,21 @@ function areFieldsFilled() {
     return imageInput.files.length > 0 && dataInicial.value && dataFinal.value;
 }
 
-
-form1.addEventListener('submit',(e)=>{
+form1.addEventListener('submit', (e) => {
     e.preventDefault()
- 
+
 
     if (areFieldsFilled()) {
         boxCOM.classList.toggle('boxCOM_flex')
-    }else{
+    } else {
         boxCOM.remove()
     }
 }
 )
 
-btnfechar.addEventListener('click',()=>{
+btnfechar.addEventListener('click', () => {
     boxCOM.remove('boxCOM_flex')
 
 })
+
 

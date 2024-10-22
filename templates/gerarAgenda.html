@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static' , filename='styles.css')}}">
+</head>
+
+<body>
+    <form action="/gerar-agenda" method="post" class="fo2">
+
+
+
+        <div class="metade2">
+            <div class="dentro">
+
+                <div class="row">
+                    <h4 style="padding-right: 20px;">Qual data deseja alterar?</h4>
+                    <input type="date" id="etad" name="data" />
+                </div>
+
+                <div class="container">
+
+                    <div class="ia">
+                        <h4>Cafe da manha:</h4>
+                    </div>
+                    <div class="ia">
+                        <select name="cafeM" id="opcao">
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
+                        </select>
+                    </div>
+
+                    <div class="ia">
+                        <h4>Almoço:</h4>
+                    </div>
+
+                    <div class="ia">
+                        <select name="almoco" id="opcao">
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
+                        </select>
+                    </div>
+
+                    <div class="ia">
+                        <h4>Cafe da tarde:</h4>
+                    </div>
+                    <div class="ia">
+                        <select name="cafeT" id="opcao">
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="iop" style="margin-top: 20px;">
+                <button id="ioio">Salvar alterações</button>
+            </div>
+        </div>
+
+
+    </form>
+</body>
+<script src="{{url_for('static',  filename = 'index.js')}}"></script>
+
+</html>
