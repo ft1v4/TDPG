@@ -48,6 +48,22 @@ def select_imagens():
     return imagens_base64
 
 def puxardata(data):
-    resultado = cursor.execute(f"SELECT data_inicial, data_final FROM cardapio where {data} ").fetchall()
-    return resultado
+
+    resultado = cursor.execute(
+        "SELECT imagem FROM cardapio WHERE ? BETWEEN data_inicial AND data_final", 
+        (data,)
+    ).fetchone()
+
+    imagem_base64 = base64.b64encode(resultado[0]).decode('utf-8')
+
+        
+    return imagem_base64
   
+def buscarAgenda(data):
+    resultado = cursor.execute("SELECT id_imagem FROM imagens WHERE data = ?", data).fetchone()
+
+    if resultado:
+        return resultado[0]  # id_imagem encontrado
+    else:
+        return None  # Não encontrou imagem
+

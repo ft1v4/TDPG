@@ -54,15 +54,34 @@
 
 
     </div>
-    <form action="/agenda" method="post">
+
+
+    <form action="/agenda" method="post" class="fo">
+
         <div class="ju">
             <div class="li">
                 <h2 style="margin-right: 10px;">Insira a data desejada :</h2>
-                <input type="date" class="inp">
-                <button id="bH"><img src="https://cdn-icons-png.flaticon.com/512/64/64673.png" alt="" id="imgLL"></button>
+                <input type="date" class="inp" >
+                <button id="bH"><img src="https://cdn-icons-png.flaticon.com/512/64/64673.png" alt=""
+                        id="imgLL"></button>
+
             </div>
         </div>
+
+
+        <div class="ma">
+            <img src="data:image/jpeg;base64,{{ imagens_base64 }}" alt="" id="car">
+        </div>
+
+
+
     </form>
+    <div class="iop">
+        <button id="ioio">Alterar Agenda</button>
+    </div>
+
+
+
 
 
 
@@ -91,8 +110,9 @@
 
 </body>
 
-<script src="../js/iconUser.js"></script>
-<script src="../js/mariane.js"></script>
 <script src="{{url_for('static',  filename = 'index.js')}}"></script>
+<!-- <script src="{{url_for('static', filename = 'iconUser.js')}}"></script>
+<script src="{{url_for('static', filename = 'mariane.js')}}"></script> -->
+
 
 </html>
