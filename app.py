@@ -24,6 +24,9 @@ def upload():
         if imagem_file:
 
             pythonBanco.inserir_imagem(imagem_file, data_inicial, data_final)
+            #inserir os dados da smn entre a dataInicial e dataFinal
+            pythonBanco.inserir_datas(data_inicial,data_final)
+
             return redirect(url_for('teste'))
         else:
             print("Nenhum arquivo de imagem enviado.")
@@ -59,12 +62,11 @@ def mostrar_agenda():
 def gerarAgenda():
     if request.method == 'POST':
         data = request.form['data']
-        imagens_base64 = pythonBanco.puxardata(data)
         cafeManha = request.form['cafeM']
         almoco = request.form['almoco']
         cafeTarde = request.form['cafeT']
         print('Data', data, 'Cafe da Manha' , cafeManha, 'Almoco', almoco,  'Cafe da Tarde' , cafeTarde)
-        return render_template('gerarAgenda.html', imagens_base64 = imagens_base64)
+        return render_template('gerarAgenda.html')
        
     return render_template('gerarAgenda.html')
 

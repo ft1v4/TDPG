@@ -59,11 +59,15 @@ def puxardata(data):
         
     return imagem_base64
   
-def buscarAgenda(data):
-    resultado = cursor.execute("SELECT id_imagem FROM imagens WHERE data = ?", data).fetchone()
+def inserir_datas(data_inicial,data_final):
+    data_atual = data_inicial
 
-    if resultado:
-        return resultado[0]  # id_imagem encontrado
-    else:
-        return None  # Não encontrou imagem
+    while data_atual <= data_final:
+     response = cursor.execute(f'''insert into gerar_agenda (data,habilitar_cafe_manha,habilitar_almoco,habilitar_cafe_tarde) 
+     values ({data_atual}, 1,1,1)''')
 
+    print(response)
+
+    
+
+                   
