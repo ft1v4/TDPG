@@ -14,13 +14,12 @@
 
     <div class="topo">
         <img src="https://www.sesisp.org.br/images/Sesi-SP.jpg" alt="logo" width="200vw" height="50vh"
-            style="margin-left: 40px; cursor: pointer;">
+            style="margin-left: 40px; cursor: pointer;" id="desperdicio">
         <div class="back">
             <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="45vw" height="45vh"
                 style=" cursor: pointer;" id="user" />
         </div>
     </div>
-
 
     <div class="config">
         <h2>Configurações</h2>
@@ -58,7 +57,6 @@
 
     </div>
 
-
     <form action="/desperdicio" method="post" class="neymar">
         <h2 style="text-align: center;padding-top: 4%;">Insira a quantidade desperdiçada esse mês(em kg):</h2>
 
@@ -76,14 +74,8 @@
         </div>
     </form>
 
-
-
-
-
-
-
     <div class="func">
-        <div class="irg">
+        <div class="irg" id="home">
             <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="25vw" height="25vh" />
             <p style="font-size: 13px;">Home</p>
         </div>
@@ -107,9 +99,9 @@
 
 
 </body>
-
-<script src="../js/iconUser.js"></script>
-<script src="../js/mariane.js"></script>
+<script src="{{url_for('static',  filename = 'config.js')}}"></script>
+<script src="{{url_for('static',  filename = 'iconUser.js')}}"></script>
+<script src="{{url_for('static',  filename = 'mariane.js')}}"></script>
 <script src="{{url_for('static',  filename = 'index.js')}}"></script>
 
 </html>

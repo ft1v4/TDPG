@@ -37,7 +37,7 @@ if (user) {
 
 
         sair.addEventListener('click', () => {
-            window.location = 'index.html'
+            window.location = '/'
         })
 
 

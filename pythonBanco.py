@@ -48,6 +48,7 @@ def select_imagens():
     return imagens_base64
 
 def puxardata(data):
+    print(data, 'ESTA VINDO A DATA')
 
     resultado = cursor.execute(
         "SELECT imagem FROM cardapio WHERE ? BETWEEN data_inicial AND data_final", 
@@ -59,14 +60,14 @@ def puxardata(data):
         
     return imagem_base64
   
-def inserir_datas(data_inicial,data_final):
-    data_atual = data_inicial
+# def inserir_datas(data_inicial,data_final):
+#     data_atual = data_inicial
 
-    while data_atual <= data_final:
-     response = cursor.execute(f'''insert into gerar_agenda (data,habilitar_cafe_manha,habilitar_almoco,habilitar_cafe_tarde) 
-     values ({data_atual}, 1,1,1)''')
+#     while data_atual <= data_final:
+#      response = cursor.execute(f'''insert into gerar_agenda (data,habilitar_cafe_manha,habilitar_almoco,habilitar_cafe_tarde) 
+#      values ({data_atual}, 1,1,1)''')
 
-    print(response)
+#     print(response)
 
     
 

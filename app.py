@@ -5,7 +5,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('insert.html')
+    return render_template('login.html')
+
+@app.route('/home')
+def RHome():
+    return render_template('home.html')
 
 @app.route('/teste')
 def teste():
@@ -25,7 +29,7 @@ def upload():
 
             pythonBanco.inserir_imagem(imagem_file, data_inicial, data_final)
             #inserir os dados da smn entre a dataInicial e dataFinal
-            pythonBanco.inserir_datas(data_inicial,data_final)
+            # pythonBanco.inserir_datas(data_inicial,data_final)
 
             return redirect(url_for('teste'))
         else:
