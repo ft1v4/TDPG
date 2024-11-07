@@ -3,10 +3,26 @@ const form1 = document.getElementById('form1');
 const btnfechar = document.getElementById('btnfechar');
 const boxCOM = document.querySelector('.boxCOM');
 const cardapioBTN = document.getElementById('cardapio')
+const homeBTN = document.getElementById('home')
+const desperdicioBTN = document.getElementById('desperdicio')
 const btnAlterar = document.getElementById('ioio')
+const btnSalvar = document.getElementById('ioio2')
+
+
 
 cardapioBTN.addEventListener('click', () => {
+    console.log('ola')
     window.location = '/agenda'
+})
+
+homeBTN.addEventListener('click', () => {
+    console.log('ola')
+    window.location = '/home'
+})
+
+desperdicioBTN.addEventListener('click',()=>{
+    console.log('teste')
+    window.location = '/desperdicio'
 })
 
 btnAlterar.addEventListener('click', () => {
@@ -43,21 +59,21 @@ function areFieldsFilled() {
     return imageInput.files.length > 0 && dataInicial.value && dataFinal.value;
 }
 
-form1.addEventListener('submit', (e) => {
-    e.preventDefault()
+// form1.addEventListener('submit', (e) => {
+//     e.preventDefault()
 
 
-    if (areFieldsFilled()) {
-        boxCOM.classList.toggle('boxCOM_flex')
-    } else {
-        boxCOM.remove()
-    }
-}
-)
+//     if (areFieldsFilled()) {
+//         boxCOM.classList.toggle('boxCOM_flex')
+//     } else {
+//         boxCOM.remove()
+//     }
+// }
+// )
 
-btnfechar.addEventListener('click', () => {
-    boxCOM.remove('boxCOM_flex')
+// btnfechar.addEventListener('click', () => {
+//     boxCOM.remove('boxCOM_flex')
 
-})
+// })
 
 

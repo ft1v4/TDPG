@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{url_for('static' , filename='styles.css')}}">
+
+</head>
+
+<body style="background-color: #0C6933;">
+
+    <div class="riscoSesi">
+        <div class="risco" style="background-color: #F0E68C;"></div>
+        <div class="risco" style="background-color: #D4A017;"></div>
+        <div class="risco" style="background-color: #E67E22;"></div>
+        <div class="risco" style="background-color: #8B4513;"></div>
+    </div>
+
+    <div class="riscoSesi2">
+        <div class="risco" style="background-color: #F0E68C;"></div>
+        <div class="risco" style="background-color: #D4A017;"></div>
+        <div class="risco" style="background-color: #E67E22;"></div>
+        <div class="risco" style="background-color: #8B4513;"></div>
+    </div>
+
+
+    <div class="boxImg">
+        <img src="https://www.sesisp.org.br/images/Sesi-SP.jpg" alt="" width="250vw" height="80vh">
+    </div>
+
+    <div class="box-login">
+        <h2>Login Funcionário</h2>
+
+        <div class="box-input">
+            <h4>Nome Completo:</h4>
+            <input placeholder="Insira seu nome completo" id="input" />
+        </div>
+
+        <div class="box-input">
+            <h4>CPF ou Email:</h4>
+            <input placeholder="Digite seu email ou cpf" id="input" />
+        </div>
+
+        <div class="box-input">
+            <h4>Senha:</h4>
+            <input placeholder="Insira sua senha" id="input" type="password" />
+        </div>
+
+        <div class="box-input">
+            <h4>Celular:</h4>
+            <input placeholder="Digite seu numero de telefone" id="input" />
+        </div>
+
+        <div class="box-input">
+            <h4>Tipo de Usuário:</h4>
+            <label>
+                <input type="radio" name="tipoUsuario" value="funcionario" onclick="mostrarAnoInput()"> Funcionário
+            </label>
+            <label>
+                <input type="radio" name="tipoUsuario" value="administrador" onclick="mostrarAnoInput()"> Administrador
+            </label>
+            <label>
+                <input type="radio" name="tipoUsuario" value="aluno" onclick="mostrarAnoInput()" id="alunoRadio"> Aluno
+            </label>
+        </div>
+
+      
+        <div class="box-input" id="anoInput" style="display: none;">
+            <h4>Ano:</h4>
+           <select id="">
+            <option value="">6° ano A </option>
+            <option value="">6° ano B </option>
+            <option value="">6° ano C </option>
+            <option value="">7° ano A </option>
+            <option value="">7° ano B </option>
+            <option value="">7° ano C </option>
+            <option value="">8° ano A </option>
+            <option value="">8° ano B </option>
+            <option value="">8° ano C </option>
+            <option value="">9° ano A </option>
+            <option value="">9° ano B </option>
+            <option value="">9° ano C </option>
+            <option value="">1° ano A </option>
+            <option value="">1° ano B </option>
+            <option value="">1° ano C </option>
+            <option value="">2° ano A </option>
+            <option value="">3° ano A </option>
+
+           </select>
+        </div>
+
+        <button id="btn">Login</button>
+    </div>
+
+
+</body>
+
+<script src="{{url_for('static',  filename = 'route.js')}}"></script>
+<script src="{{url_for('static',  filename = 'mariane.js')}}"></script>
+<script src="{{url_for('static',  filename = 'index.js')}}"></script>
+
+</html>
