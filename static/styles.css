@@ -317,9 +317,9 @@ body {
 .config {
     width: 20vw;
     position: absolute;
-    top: 50%;
-    left: 15%;
-    height: 40vh;
+    top: 60%;
+    left: 12%;
+    height: 30vh;
     background-color: #27AE60;
     border-radius: 10px;
     display: none;
