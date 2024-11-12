@@ -11,6 +11,12 @@ def home():
 def RHome():
     return render_template('home.html')
 
+@app.route('/refeicaoAgendada', methods=['POST'])
+def refeicaoAgendada():
+    segunda_CFM = request.form['segundaCFM']
+    print(segunda_CFM)
+    return render_template('home.html')
+
 @app.route('/teste')
 def teste():
     return render_template('teste.html')
@@ -62,8 +68,21 @@ def mostrar_agenda():
       return render_template('mariane.html', imagens_base64 = imagens_base64)
     return render_template('mariane.html')
 
+
+@app.route('/cardapio', methods=['POST', 'GET'])
+def mostrar_cardapio():
+    if request.method == 'POST':
+      print('Gerou a agenda com sucesso')
+      data = request.form['data']
+      imagens_base64 = pythonBanco.puxardata(data)
+      return render_template('home.html', imagens_base64 = imagens_base64)
+    return render_template('home.html')
+
+
+
 @app.route('/gerar-agenda',methods=['POST','GET'])
 def gerarAgenda():
+    print(request.method)
     if request.method == 'POST':
         data = request.form['data']
         cafeManha = request.form['cafeM']
@@ -74,7 +93,12 @@ def gerarAgenda():
        
     return render_template('gerarAgenda.html')
 
+@app.route('/funcionario')
+def funcionario():
+    return render_template('funcionario.html')
    
+
+
 
         
 

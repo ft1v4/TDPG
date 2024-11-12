@@ -9,7 +9,6 @@ const btnAlterar = document.getElementById('ioio')
 const btnSalvar = document.getElementById('ioio2')
 
 
-
 cardapioBTN.addEventListener('click', () => {
     console.log('ola')
     window.location = '/agenda'
@@ -23,10 +22,6 @@ homeBTN.addEventListener('click', () => {
 desperdicioBTN.addEventListener('click',()=>{
     console.log('teste')
     window.location = '/desperdicio'
-})
-
-btnAlterar.addEventListener('click', () => {
-    window.location = '/gerar-agenda'
 })
 
 function previewImage(event) {

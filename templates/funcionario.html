@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+
+</head>
+
+<body>
+
+    <div class="topo">
+        <img src="https://www.sesisp.org.br/images/Sesi-SP.jpg" alt="logo" width="200vw" height="50vh"
+            style="margin-left: 40px; cursor: pointer;" >
+        <div class="back">
+            <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="45vw" height="45vh"
+                style=" cursor: pointer;" id="user" />
+        </div>
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+        <h1 style="color: black;">Bem vindo Usuário !!!</h1>
+    </div>
+
+    <div style="display: flex;">
+        <div class="metade">
+            <div class="total">
+                <div class="qqq2"
+                    style="grid-column: 1;grid-row: 2 / 3; height: 290%; width: 92%;">
+                    <p>Segunda</p>
+                </div>
+
+                <div class="qqq2" style="grid-column: 2 / 3;grid-row: 1; width: 190%; height: 90%;">
+                    <p>Terça</p>
+                </div>
+
+                <div class="qqq2" style="grid-column: 2/3;grid-row: 2/3; width: 190%; height: 90%;">
+                    <p>Quarta</p>
+                </div>
+
+                <div class="qqq2" style="grid-column: 2;grid-row: 3; width: 90%; height: 90%;">
+                    <p>Quinta</p>
+                </div>
+
+                <div class="qqq2" style="grid-column: 3;grid-row: 3; width: 90%; height: 90%;">
+                    <p>Sexta</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="metade">
+            <h1 style="text-align: center;color: black;">Dados:</h1>
+
+
+            <div class="carrossel">
+
+                <div class="slides">
+                    <div class="slide">
+
+                        <div class="luigiComeBuceta" style="width: 100%;">
+                            <div class="gozei">
+                                <h1>Cafe da manha :</h1>
+                            </div>
+
+                            <div
+                                style="display: flex; width:320px ; justify-content: space-between; align-items: center;margin: 0 auto;">
+                                <div style="display: flex;align-items: center;justify-content: center; width: 33.3%;">
+                                    <h3>Vai comer</h3>
+                                </div>
+
+                                <div style="display: flex;align-items: center;justify-content: center; width: 33.3%;">
+                                    <h3>Não vai comer</h3>
+                                </div>
+
+                                <div style="display: flex;align-items: center;justify-content: center; width: 33.3%;">
+                                    <h3>Não respondeu</h3>
+                                </div>
+                            </div>
+
+                            <div class="sexoAgressivo"
+                                style="grid-template-columns: repeat(3,100px); grid-template-rows: repeat(1,50px);">
+                                <div class="sexoCasual" style="grid-column: 1; grid-row: 1;">
+                                    <h2 style="color: white;">17 Alunos</h2>
+                                </div>
+                                <div class="sexoCasual" style="grid-column: 2; grid-row: 1;">
+                                    <h2 style="color: white;">5 Alunos</h2>
+                                </div>
+                                <div class="sexoCasual" style="grid-column: 3; grid-row: 1;">
+                                    <h2 style="color: white;">10 Alunos</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="luigiComeBuceta" style="width: 100%;">
+                            <div class="gozei">
+                                <h1>Almoço :</h1>
+                            </div>
+                            <div
+                                style="display: flex; width:320px ; justify-content: space-between; align-items: center;margin: 0 auto;">
+                                <div style="display: flex;align-items: center;justify-content: center; width: 33.3%;">
+                                    <h3>Vai comer</h3>
+                                </div>
+
+                                <div style="display: flex;align-items: center;justify-content: center; width: 33.3%;">
+                                    <h3>Não vai comer</h3>
+                                </div>
+
+                                <div style="display: flex;align-items: center;justify-content: center; width: 33.3%;">
+                                    <h3>Não respondeu</h3>
+                                </div>
+                            </div>
+                            <div class="sexoAgressivo"
+                                style="grid-template-columns: repeat(3,100px); grid-template-rows: repeat(1,50px);">
+                                <div class="sexoCasual" style="grid-column: 1; grid-row: 1;">
+                                    <h2 style="color: white;">10 Alunos</h2>
+                                </div>
+                                <div class="sexoCasual" style="grid-column: 2; grid-row: 1;">
+                                    <h2 style="color: white;">8 Alunos</h2>
+                                </div>
+                                <div class="sexoCasual" style="grid-column: 3; grid-row: 1;">
+                                    <h2 style="color: white;">14 Alunos</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="luigiComeBuceta" style="width: 100%;">
+                            <div class="gozei">
+                                <h1>Cafe da Tarde :</h1>
+                            </div>
+
+
+                            <div
+                                style="display: flex; width:320px ; justify-content: space-between; align-items: center;margin: 0 auto;">
+                                <div style="display: flex;align-items: center;justify-content: center; width: 33.3%;">
+                                    <h3>Vai comer</h3>
+                                </div>
+
+                                <div style="display: flex;align-items: center;justify-content: center; width: 33.3%;">
+                                    <h3>Não vai comer</h3>
+                                </div>
+
+                                <div style="display: flex;align-items: center;justify-content: center; width: 33.3%;">
+                                    <h3>Não respondeu</h3>
+                                </div>
+                            </div>
+                            <div class="sexoAgressivo"
+                                style="grid-template-columns: repeat(3,100px); grid-template-rows: repeat(1,50px);">
+                                <div class="sexoCasual" style="grid-column: 1; grid-row: 1;">
+                                    <h2 style="color: white;">13 Alunos</h2>
+                                </div>
+                                <div class="sexoCasual" style="grid-column: 2; grid-row: 1;">
+                                    <h2 style="color: white;">8 Alunos</h2>
+                                </div>
+                                <div class="sexoCasual" style="grid-column: 3; grid-row: 1;">
+                                    <h2 style="color: white;">15 Alunos</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <div class="config">
+        <h2>Configurações</h2>
+        <div
+            style="border-bottom: 2px solid black;  display: flex;width: 90%;justify-content: start; align-items: center;padding-bottom: 5px;padding-left: 30px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="45vw" height="45vh" />
+            <h3 style="margin-left: 10px;">Editar perfil</h3>
+        </div>
+
+        <div
+            style="border-bottom: 2px solid black;  display: flex;width: 90%;justify-content: start; align-items: center; height: 40px;padding-bottom: 5px;padding-left: 30px;padding-top: 5px;">
+
+            <label class="switch">
+                <input type="checkbox" id="toggleSwitch">
+                <span class="slider"></span>
+            </label>
+
+
+            <h3 style="margin-left: 30px;">Tema Claro</h3>
+        </div>
+
+        <div
+            style="border-bottom: 2px solid black; display: flex;width: 90%;justify-content: start; align-items: center; height: 40px; padding-left: 30px;padding-bottom: 5px;padding-top: 5px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828427.png" width="35w" height="35vh" />
+            <h3 style="margin-left: 10px;">Sair da conta</h3>
+        </div>
+
+
+
+    </div>
+
+    <div class="func">
+        <div class="irg" id="home">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="25vw" height="25vh" />
+            <p style="font-size: 13px;">Home</p>
+        </div>
+
+        <div class="irg" id="cardapio">
+            <img src="https://cdn-icons-png.flaticon.com/512/1046/1046849.png" width="25vw" height="25vh" />
+            <p style="font-size: 13px;">Cardápio</p>
+        </div>
+
+
+        <div class="irg">
+            <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" width="25vw" height="25vh" id="config" />
+            <p style="font-size: 13px;">Configuração</p>
+        </div>
+
+        <div class="irg" id="desperdicio">
+            <img src="https://cdn-icons-png.flaticon.com/512/2907/2907313.png" width="25vw" height="25vh" />
+            <p style="font-size: 13px;">Desperdício</p>
+        </div>
+    </div>
+
+
+</body>
+
+<script src="{{url_for('static', filename= 'index.js')}}"></script>
+<script src="{{url_for('static', filename= 'slide.js')}}"></script>
+<script src="{{url_for('static', filename= 'config.js')}}"></script>
+<script src="{{url_for('static', filename= 'iconUser.js')}}"></script>
+<script src="{{url_for('static', filename= 'mariane.js')}}"></script>
+
+</html>

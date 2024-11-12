@@ -7,7 +7,9 @@
 }
 
 body {
-    background-color: rgb(67, 67, 67);
+    background-color: #F5F5DC;
+    width: 99.5vw;
+    height: 100%;
 }
 
 .title {
@@ -25,7 +27,7 @@ body {
     left: 3%;
 }
 
-.btn{
+.btn {
     background-color: azure;
     border-radius: 5px;
     padding: 5px;
@@ -61,4 +63,133 @@ body {
     align-items: center;
     flex-direction: column;
     margin: 20px;
+}
+
+
+.homeCardapio {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0C6933;
+    border-radius: 8px;
+    width: 80%;
+    padding: 10px 0px 10px 0px;
+    height: 90%;
+
+}
+
+#imgCCC {
+    width: 100%;
+    margin-top: 1%;
+    border-radius: 8px;
+}
+
+.divIMGGGG {
+    width: 90%;
+}
+
+.total {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.metade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+
+.luigiComeBuceta {
+    background-color: #0C6933;
+    width: 40%;
+    height: 350px;
+    border-radius: 8px;
+    display: flex;
+    padding-top: 2%;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.danadas {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.carrossel {
+    position: relative;
+    width: 700px;
+    height: 350px;
+    margin: auto;
+    overflow: hidden;
+    background-color: #27AE60;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 3%;
+}
+
+.fundinho {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: repeat(4, 173px);
+    grid-template-rows: repeat(6, 50px);
+}
+
+.boxinha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    transform: scale(0.8);
+    border-radius: 8px;
+}
+
+.boxxduo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.7);
+}
+
+
+.duvido {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: scale(0.9);
+}
+
+#radio {
+    width: 35px;
+    height: 35px;
+}
+
+
+
+/* ESTILO ESCOLHA REFEICOES */
+
+#divDIAS {
+    background-color: #ccc;
+    width: 350px;
+    height: 400px;
+    margin-top: 10px;
+}
+
+#divDentro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid red;
 }

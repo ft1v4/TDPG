@@ -19,7 +19,6 @@ body {
     font-family: "Bebas Neue", sans-serif;
 }
 
-
 .boxF {
     background-color: rgb(162, 162, 162);
     width: 40%;
@@ -99,8 +98,6 @@ body {
     cursor: pointer;
 }
 
-
-
 .image-preview {
     max-width: 300px;
     max-height: 300px;
@@ -118,7 +115,6 @@ body {
     padding: 20px;
     display: none;
 }
-
 
 .boxCOM {
     position: absolute;

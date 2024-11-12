@@ -40,6 +40,21 @@
     padding: 10px;
 }
 
+.ano {
+    position: relative;
+    background-color: #27AE60;
+    width: 80%;
+    height: 12vh;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    overflow: hidden;
+  }
+
 .duas {
     display: flex;
     align-items: center;
@@ -99,16 +114,7 @@
     flex-direction: column;
 }
 
-.ano {
-    background-color: #0C6933;
-    width: 70%;
-    height: 20vh;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
+
 
 .func {
     background-color: #27AE60;
@@ -607,8 +613,6 @@ input:checked+.slider:before {
     margin-top: 14%;
 }
 
-
-
 .dentro {
     display: flex;
     justify-content:center;
@@ -662,8 +666,6 @@ input:checked+.slider:before {
     width: 100%;
     height: 100%;
 }
-
-
 
 #BT{
     width: 35px;

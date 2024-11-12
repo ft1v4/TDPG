@@ -69,6 +69,8 @@ def puxardata(data):
 
 #     print(response)
 
+
+# def inserir_refeiçoes()
     
 
                    

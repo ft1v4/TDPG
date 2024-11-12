@@ -12,5 +12,17 @@ function mostrarAnoInput() {
 
 const btn = document.getElementById('btn')
 btn.addEventListener('click', ()=>{
-    window.location = '/home'
+    var alunoRadio = document.getElementById("alunoRadio");
+    var funcionarioRadio = document.getElementById("funcionarioRadio");
+    var admRadio = document.getElementById("admRadio");
+
+    if (alunoRadio.checked) {
+        window.location = '/home'
+    }if(funcionarioRadio.checked){
+        alert('NAO FUNCIONA ISSO')
+    }if(admRadio.checked){
+        window.location = '/funcionario'
+    }
+
+    
 })
