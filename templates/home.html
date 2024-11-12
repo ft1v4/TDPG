@@ -13,7 +13,7 @@
 
     <div class="topo">
         <img src="https://www.sesisp.org.br/images/Sesi-SP.jpg" alt="logo" width="200vw" height="50vh"
-            style="margin-left: 40px; cursor: pointer;" >
+            style="margin-left: 40px; cursor: pointer;">
         <div class="back">
             <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="45vw" height="45vh"
                 style=" cursor: pointer;" id="user" />
@@ -27,8 +27,7 @@
     <div style="display: flex;">
         <div class="metade">
             <div class="total">
-                <div class="qqq2"
-                    style="grid-column: 1;grid-row: 2 / 3; height: 290%; width: 92%;">
+                <div class="qqq2" style="grid-column: 1;grid-row: 2 / 3; height: 290%; width: 92%;">
                     <p>Segunda</p>
                 </div>
 
@@ -61,7 +60,10 @@
 
                         <div class="luigiComeBuceta" style="width: 100%;">
                             <div class="gozei">
-                                <h1>Cafe da manha :</h1>
+                                <h1>Cafe da manha : </h1>
+                            </div>
+                            <div class="datacomida">
+                                <p>Data: <time id="dataAtual"></time></p>
                             </div>
 
                             <div
@@ -225,6 +227,14 @@
 
 
 </body>
+
+<script>
+    const data = new Date();
+    const dataFormatada = data.toLocaleDateString("pt-BR", {
+        day: 'numeric', month: 'long', year: 'numeric'
+    });
+    document.getElementById("dataAtual").textContent = dataFormatada;
+</script>
 
 <script src="{{url_for('static', filename= 'index.js')}}"></script>
 <script src="{{url_for('static', filename= 'slide.js')}}"></script>

@@ -201,6 +201,7 @@
     flex-direction: column;
 }
 
+
 .danadas {
     display: flex;
     align-items: center;
@@ -218,7 +219,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+}
+
+.datacomida {
+    font-size: 20px;
 }
 
 .sexoCasual {
@@ -611,10 +616,10 @@ input:checked+.slider:before {
 
 .dentro {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     background-color: #d9d9d9;
-    width:30%;
+    width: 30%;
     height: 40vh;
     padding-left: 10px;
     border-radius: 8px;
@@ -646,26 +651,26 @@ input:checked+.slider:before {
 
 }
 
-#etad{
+#etad {
     border-radius: 5px;
     border: 1px solid black;
     padding: 3px;
 }
 
-#opcao{
+#opcao {
     border-radius: 5px;
     border: 1px solid black;
     padding: 3px;
 }
 
-.metade2{
+.metade2 {
     width: 100%;
     height: 100%;
 }
 
 
 
-#BT{
+#BT {
     width: 35px;
     height: 35px;
     background-color: #20b15c;
