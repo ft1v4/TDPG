@@ -12,9 +12,8 @@ def RHome():
     return render_template('home.html')
 
 @app.route('/refeicaoAgendada', methods=['POST'])
-def refeicaoAgendada():
-    segunda_CFM = request.form['segundaCFM']
-    print(segunda_CFM)
+def refeicaoAgendada(json):
+    print(json)
     return render_template('home.html')
 
 @app.route('/teste')
@@ -79,7 +78,6 @@ def mostrar_cardapio():
     return render_template('home.html')
 
 
-
 @app.route('/gerar-agenda',methods=['POST','GET'])
 def gerarAgenda():
     print(request.method)
@@ -97,7 +95,9 @@ def gerarAgenda():
 def funcionario():
     return render_template('funcionario.html')
    
-
+@app.route('/desperdicioAluno')
+def desperdicioAluno():
+    return render_template('pagDespAluno.html')
 
 
         

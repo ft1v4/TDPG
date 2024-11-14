@@ -9,10 +9,12 @@ const btnAlterar = document.getElementById('ioio')
 const btnSalvar = document.getElementById('ioio2')
 
 
+
 cardapioBTN.addEventListener('click', () => {
     console.log('ola')
     window.location = '/agenda'
 })
+
 
 homeBTN.addEventListener('click', () => {
     console.log('ola')

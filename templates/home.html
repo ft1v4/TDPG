@@ -31,12 +31,6 @@
     <div class="total">
 
         <div class="metade">
-            <!-- <h1>Cardapio</h1>
-            <div class="homeCardapio">
-                <div class="divIMGGGG">
-                    <img src="../images/cardapio.png" id="imgCCC" />
-                </div>
-            </div> -->
 
             <form action="/cardapio" method="post" class="fo">
                 <div class="ju">
@@ -58,10 +52,10 @@
         <div class="metade">
             <!-- <h1 style="text-align: center;color: black;">Dados:</h1>   -->
             <h5>Id usuario</h5>
-            <input type="number" id="idUsu">
+            <input type="number" id="userID">
             <h5>Data</h5>
             <input type="date" id="dataR" onchange="validar()">
-        
+
             <!-- <div id="divDIAS" style="display: none;">
                 <div id="divDentro">
 
@@ -114,13 +108,10 @@
             </div> -->
 
             <div id="diasSemana" style="display: none;">
-                <h3>Escolha as refeições:</h3>
+                <h3 style="margin:  0 auto;">Escolha as refeições:</h3>
                 <div id="diasContainer"></div>
                 <button onclick="enviarDados()">Enviar Dados</button>
             </div>
-
-
-
 
 
         </div>
@@ -160,9 +151,8 @@
 
 
     <div class="func">
-        <div class="irg">
-            <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="25vw" height="25vh"
-                onclick="window.location = 'dias.html'" />
+        <div class="irg" id="home">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="25vw" height="25vh" />
             <p style="font-size: 13px;">Home</p>
         </div>
 
@@ -171,17 +161,18 @@
             <p style="font-size: 13px;">Configuração</p>
         </div>
 
-        <div class="irg">
-            <img src="https://cdn-icons-png.flaticon.com/512/2907/2907313.png" width="25vw" height="25vh"
-                onclick="window.location = 'desperdicio.html'" />
+        <div class="irg" id="desperdicioA">
+            <img src="https://cdn-icons-png.flaticon.com/512/2907/2907313.png" width="25vw" height="25vh" />
             <p style="font-size: 13px;">Desperdício</p>
         </div>
     </div>
 
 
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="{{url_for('static',filename = 'refei.js')}}"></script>
+<script src="{{url_for('static',filename = 'index.js')}}"></script>
+<script src="{{url_for('static',filename = 'indexDesperdicioA.js')}}"></script>
 <script src="{{url_for('static',filename = 'index.js')}}"></script>
 <script src="{{url_for('static',filename='slide.js')}}"></script>
 <script src="{{url_for('static',filename='iconUser.js')}}"></script>

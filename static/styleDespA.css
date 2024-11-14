@@ -1,0 +1,384 @@
+.topo {
+    background-color: #27AE60;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.back {
+    background: #27AE60;
+    width: 50vw;
+    height: 10vh;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 40px
+}
+
+
+.divs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    flex-direction: column;
+}
+
+.ano {
+    position: relative;
+    background-color: #27AE60;
+    width: 80%;
+    height: 12vh;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.func {
+    background-color: #27AE60;
+    width: 16vw;
+    height: 8vh;
+    position: absolute;
+    left: 0%;
+    top: 92%;
+    padding: 10px;
+    padding-top: 0px;
+    padding-left: 30px;
+    padding-bottom: 0px;
+    border-radius: 0px 5px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.irg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.config {
+    width: 20vw;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    height: 40vh;
+    background-color: #27AE60;
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.config.show {
+    display: flex;
+}
+
+.carrossel {
+    position: relative;
+    width: 450px;
+    height: 350px;
+    margin: auto;
+    overflow: hidden;
+    background-color: #0C6933;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fffh {
+    border-radius: 8px;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #27AE60;
+    flex-direction: column;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    background-color: #F5F5DC;
+    width: 99.5vw;
+    height: 100%;
+}
+
+
+.riscoSesi {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5%;
+    height: 80%;
+}
+
+
+.riscoSesi2 {
+    position: absolute;
+    top: -3px;
+    right: 0;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5%;
+    height: 80%;
+}
+
+
+
+.risco {
+    background-color: blue;
+    width: 100%;
+    height: 30px;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Bebas Neue";
+    font-weight: 400;
+    font-style: normal;
+}
+
+.box-login {
+    background-color: white;
+    width: 25vw;
+    height: 60vh;
+    margin: 0 auto;
+    margin-top: 3%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+#input {
+    width: 18vw;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.box-input {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#btn {
+    background-color: #20b15c;
+    width: 10vw;
+    height: 7vh;
+    border-radius: 5px;
+    border: 2px solid black;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#btn:hover {
+    background-color: #14713b;
+}
+
+#esq {
+    color: #20b15c;
+    text-decoration: none;
+    position: absolute;
+    left: 2%;
+    top: 95%;
+    font-size: 14px;
+    margin: 5px;
+}
+
+.boxImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.voltar {
+    background-color: #27AE60;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 13%;
+    left: 2%;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.divAL {
+    background-color: #27AE60;
+    width: 60vw;
+    height: 40vh;
+    margin: 0 auto;
+    margin-top: 4%;
+    border-radius: 8px;
+}
+
+.escolha {
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+}
+
+.aluno {
+    display: flex;
+    background-color: #20b15c;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 8px 0px 0px 0px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.funcio {
+    background-color: #20b15c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 0px 8px 0px 0px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.aluno:hover {
+    background-color: #14713b;
+}
+
+
+.funcio:hover {
+    background-color: #14713b;
+}
+
+.selected {
+    background-color: #14713b;
+    border-radius: 8px;
+    transform: scale(1.1);
+
+}

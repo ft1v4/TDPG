@@ -70,7 +70,8 @@ def puxardata(data):
 #     print(response)
 
 
-# def inserir_refeiçoes()
+# def inserir_refeiçoes(data,id,cafe,almoco,tarde):
+#     cursor.execute(f"insert into REFEICAO_AGENDADA(id_data,id_usuario,cafe_manha,almoco,cafe_tarde) values ({})")
     
 
                    
