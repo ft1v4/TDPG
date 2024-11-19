@@ -70,8 +70,13 @@ def puxardata(data):
 #     print(response)
 
 
-# def inserir_refeiçoes(data,id,cafe,almoco,tarde):
-#     cursor.execute(f"insert into REFEICAO_AGENDADA(id_data,id_usuario,cafe_manha,almoco,cafe_tarde) values ({})")
-    
+def inserir_refeiçoes(data,id,cafe,almoco,tarde):
+
+    cafe2 = int(cafe)
+    almoco2 = int(almoco)
+    tarde2 = int(tarde)
+    sql = (f"insert into REFEICAO_AGENDADA(id_data,id_usuario,cafe_manha,almoco,cafe_tarde) values (?,?,?,?,?)")
+    cursor.execute(sql,(data,id,cafe2,almoco2,tarde2))
+    print('COLOCOU NO BANCO')
 
                    

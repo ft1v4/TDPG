@@ -44,6 +44,7 @@ function gerarDiasSemana(dataInicio) {
             const checkbox = document.createElement("input");
             checkbox.type = "checkbox";
             checkbox.id = `${dataFormatada}_${refeicao.replace(" ", "_").toLowerCase()}`;
+            console.log('OLHA PRA MIMA',checkbox.id)
             checkbox.dataset.data = dataFormatada; // Armazena a data no atributo dataset
             checkbox.dataset.refeicao = refeicao.replace(" ", "_").toLowerCase(); // Nome da refeição
 
@@ -63,19 +64,20 @@ function gerarJson() {
     // Itera sobre os dias da semana (segunda a sexta)
     for (let i = 0; i < diasContainer.children.length; i++) {
         const divDia = diasContainer.children[i];
-        const data = divDia.querySelector("input").dataset.data; // Extrai a data
+        const data = divDia.querySelector("input").dataset.data
+        console.log('ESSA É A DATA', data)
 
-        const cafeCheckbox = document.getElementById(`${data}_cafe_manha`);
-        const almocoCheckbox = document.getElementById(`${data}_almoco`);
-        const tardeCheckbox = document.getElementById(`${data}_cafe_tarde`);
+        const cafeCheckbox = document.getElementById(`${data}_café_da manhã`).checked
+        const almocoCheckbox = document.getElementById(`${data}_almoço`).checked
+        const tardeCheckbox = document.getElementById(`${data}_café_da tarde`).checked
 
-        console.log('FFFFFFF', data)
+
 
         const refeicaoData = {
             "data": data,
-            "cafe_manha": cafeCheckbox ? cafeCheckbox.checked : false,
-            "almoco": almocoCheckbox ? almocoCheckbox.checked : false,
-            "cafe_tarde": tardeCheckbox ? tardeCheckbox.checked : false
+            "cafe_manha": cafeCheckbox ,
+            "almoco": almocoCheckbox ,
+            "cafe_tarde": tardeCheckbox 
         };
 
         refeicoes.push(refeicaoData);

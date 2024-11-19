@@ -12,8 +12,33 @@ def RHome():
     return render_template('home.html')
 
 @app.route('/refeicaoAgendada', methods=['POST'])
-def refeicaoAgendada(json):
-    print(json)
+def refeicaoAgendada():
+    dados = request.get_json()
+    id = dados.get('id_usuario')
+    
+    # Extrair as informações das refeições
+    refeicoes = dados.get('refeicoes', [])
+    
+    # Criar uma lista com as informações separadas
+    refeicoes_separadas = []
+    for refeicao in refeicoes:
+        data = refeicao.get('data')
+        cafe = refeicao.get('cafe_manha')
+        almoco = refeicao.get('almoco')
+        tarde = refeicao.get('cafe_tarde')
+        
+        refeicoes_separadas.append({
+            'data': data,
+            'cafeManha': cafe,
+            'almoco': almoco,
+            'cafeTarde': tarde
+        })
+
+        pythonBanco.inserir_refeiçoes(data,id,cafe,almoco,tarde)
+    
+    print(refeicoes_separadas)
+    print(dados)
+    
     return render_template('home.html')
 
 @app.route('/teste')
