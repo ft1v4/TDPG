@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+*{
+    font-family: "Bebas Neue", sans-serif
+}
+
 .topo {
     background-color: #27AE60;
     width: 100vw;
@@ -45,7 +51,7 @@
 
 .func {
     background-color: #27AE60;
-    width: 16vw;
+    width: 13vw;
     height: 8vh;
     position: absolute;
     left: 0%;
@@ -197,7 +203,7 @@ input:checked+.slider:before {
     flex-direction: column;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 
 body {
     background-color: #F5F5DC;

@@ -1,25 +1,25 @@
-
 function validar() {
     const dataInput = document.getElementById("dataR");
+    const divForms = document.getElementById('divForms')
     const diasSemana = document.getElementById("diasSemana");
-    const diasContainer = document.getElementById("diasContainer");
+  
 
-    console.log(dataInput.value)
     const dataSelecionada = new Date(dataInput.value.split('-'));
     const diaSemana = dataSelecionada.getDay();
-    console.log(dataSelecionada)
     if (diaSemana != 1) {
         alert("Por favor, selecione uma segunda-feira.");
     } else {
         diasSemana.style.display = "block";
+        divForms.style.display = 'none'
         gerarDiasSemana(dataSelecionada);
     }
 }
 
 function gerarDiasSemana(dataInicio) {
     const diasContainer = document.getElementById("diasContainer");
+    diasContainer.innerHTML = ''
 
-    // Gera os dias da segunda a sexta
+
     for (let i = 0; i < 5; i++) {
         const novaData = new Date(dataInicio);
 
@@ -32,9 +32,18 @@ function gerarDiasSemana(dataInicio) {
         const divDia = document.createElement("div");
         divDia.className = 'corsinha'
 
+        const divDiaSmn = document.createElement('div')
+        divDiaSmn.id = 'divDiaSmn'
+
+
         const tituloDia = document.createElement("h4");
         tituloDia.innerText = `${novaData.toLocaleDateString("pt-BR", { weekday: "long", day: "numeric", month: "numeric" })}`;
-        divDia.appendChild(tituloDia);
+        tituloDia.style.fontWeight = 'bold'
+        divDiaSmn.appendChild(tituloDia);
+        divDia.appendChild(divDiaSmn)
+
+        const divEscolhaRef = document.createElement('div')
+        divEscolhaRef.id = 'divEscolhaRef'
 
         const refeicoes = ["Café da Manhã", "Almoço", "Café da Tarde"];
         refeicoes.forEach((refeicao) => {
@@ -43,14 +52,17 @@ function gerarDiasSemana(dataInicio) {
 
             const checkbox = document.createElement("input");
             checkbox.type = "checkbox";
+            checkbox.style.cursor = 'pointer'
             checkbox.id = `${dataFormatada}_${refeicao.replace(" ", "_").toLowerCase()}`;
-            console.log('OLHA PRA MIMA',checkbox.id)
-            checkbox.dataset.data = dataFormatada; // Armazena a data no atributo dataset
-            checkbox.dataset.refeicao = refeicao.replace(" ", "_").toLowerCase(); // Nome da refeição
+            checkbox.dataset.data = dataFormatada;
+            checkbox.dataset.refeicao = refeicao.replace(" ", "_").toLowerCase();
 
             label.appendChild(checkbox);
-            divDia.appendChild(label);
+            divEscolhaRef.appendChild(label);
+            divDia.appendChild(divEscolhaRef)
         });
+
+
 
         diasContainer.appendChild(divDia);
     }
@@ -65,7 +77,7 @@ function gerarJson() {
     for (let i = 0; i < diasContainer.children.length; i++) {
         const divDia = diasContainer.children[i];
         const data = divDia.querySelector("input").dataset.data
-        console.log('ESSA É A DATA', data)
+
 
         const cafeCheckbox = document.getElementById(`${data}_café_da manhã`).checked
         const almocoCheckbox = document.getElementById(`${data}_almoço`).checked
@@ -75,9 +87,9 @@ function gerarJson() {
 
         const refeicaoData = {
             "data": data,
-            "cafe_manha": cafeCheckbox ,
-            "almoco": almocoCheckbox ,
-            "cafe_tarde": tardeCheckbox 
+            "cafe_manha": cafeCheckbox,
+            "almoco": almocoCheckbox,
+            "cafe_tarde": tardeCheckbox
         };
 
         refeicoes.push(refeicaoData);
@@ -89,17 +101,33 @@ function gerarJson() {
     };
 }
 
+const divConfirma = document.getElementById('divConfirma')
+function fecharDiv() {
+    const divForms = document.getElementById('divForms')
+    const diasSemana = document.getElementById("diasSemana");
+    divConfirma.style.display = 'none'
+    diasSemana.style.display = "none";
+    divForms.style.display = 'flex'
+}
+
 function enviarDados() {
+    const dataInput = document.getElementById("dataR");
+    const userId = document.getElementById("userID")
     const jsonData = gerarJson();
 
     axios.post('/refeicaoAgendada', jsonData)
-    console.log(jsonData)
-        .then(response => {
-            console.log("Dados enviados com sucesso:", response.data);
-            alert("Dados enviados com sucesso!");
-        })
-        .catch(error => {
-            console.error("Erro ao enviar os dados:", error);
-            alert("Erro ao enviar os dados.");
-        });
+
+    try {
+        const divConfirma = document.getElementById('divConfirma')
+        divConfirma.style.display = 'flex'
+        dataInput.value = ''
+        userId.value = ''
+
+
+    } catch (error) {
+        console.log(error)
+        alert("Erro ao enviar os dados.")
+    }
+
+
 }

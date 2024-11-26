@@ -21,8 +21,9 @@ btn.addEventListener('click', ()=>{
     }if(funcionarioRadio.checked){
         alert('NAO FUNCIONA ISSO')
     }if(admRadio.checked){
-        window.location = '/funcionario'
+        window.location = '/adm'
     }
 
     
 })
+

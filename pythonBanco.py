@@ -55,10 +55,15 @@ def puxardata(data):
         (data,)
     ).fetchone()
 
-    imagem_base64 = base64.b64encode(resultado[0]).decode('utf-8')
+    if(resultado == None):
+        print('NAO TEM ')
+    else:
+        imagem_base64 = base64.b64encode(resultado[0]).decode('utf-8')
+        return imagem_base64
+    
 
         
-    return imagem_base64
+    
   
 # def inserir_datas(data_inicial,data_final):
 #     data_atual = data_inicial
@@ -71,12 +76,12 @@ def puxardata(data):
 
 
 def inserir_refeiçoes(data,id,cafe,almoco,tarde):
-
     cafe2 = int(cafe)
     almoco2 = int(almoco)
     tarde2 = int(tarde)
-    sql = (f"insert into REFEICAO_AGENDADA(id_data,id_usuario,cafe_manha,almoco,cafe_tarde) values (?,?,?,?,?)")
-    cursor.execute(sql,(data,id,cafe2,almoco2,tarde2))
-    print('COLOCOU NO BANCO')
+    # sql = (f"insert into REFEICAO_AGENDADA(id_data,id_usuario,cafe_manha,almoco,cafe_tarde) values (?,?,?,?,?)")
+    # cursor.execute(sql,(data,id,cafe2,almoco2,tarde2))
+    # cursor.commit()
+    print('COLOCOU NO BANCO',data,id,cafe2,almoco2,tarde2)
 
                    

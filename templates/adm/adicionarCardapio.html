@@ -4,20 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gerar agenda</title>
-    <link rel="stylesheet" href="{{url_for('static' , filename='style/styles.css')}}">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style/styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='style/upload.css')}}">
+
 </head>
 
 <body>
 
     <div class="topo">
         <img src="https://www.sesisp.org.br/images/Sesi-SP.jpg" alt="logo" width="200vw" height="50vh"
-         style="margin-left: 40px; cursor: pointer;" onclick="homeAdm()">
+            style="margin-left: 40px; cursor: pointer;" >
         <div class="back">
             <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="45vw" height="45vh"
                 style=" cursor: pointer;" id="user" />
         </div>
     </div>
+
+
+    <form id='form1' action="/upload" method="post" enctype="multipart/form-data" class="boxF">
+
+        <div class="boxInt">
+
+            <div class="file-upload">
+                <label for="file-input" class="custom-file-upload">
+                    Procurar Imagem...
+                </label>
+                <input id="file-input" type="file" accept="image/*" name="imagem" onchange="previewImage(event)" />
+            </div>
+
+            <input type="date" name="data_inicial" required id="input">
+            <input type="date" name="data_final" required id="input">
+        </div>
+
+        <button type="submit" id="btng">Enviar</button>
+            
+    <div class="boxCOM">
+        <div class="boxCO">
+            <h3 style="text-align: center;">Imagem inserida com sucesso ✅</h3>
+            <button id="btnfechar" class="btnCC" type="submit">Fechar</button>
+        </div>
+    </div>
+      
+    </form>
+
+
+    <div class="boxIMAGE">
+        <h2 class="title" style="color: black;margin: 0; margin-top: 0;">Imagem Selecionada:</h2>
+        <img id="image-preview" class="image-preview" src="#" alt="Pré-visualização da imagem" />
+    </div>
+  
 
     <div class="config">
         <h2>Configurações</h2>
@@ -39,65 +75,13 @@
             <h3 style="margin-left: 30px;">Tema Claro</h3>
         </div>
 
-
-        <div
-            style="border-bottom: 2px solid black; display: flex;width: 90%;justify-content: start; align-items: center; height: 40px; padding-left: 30px;padding-bottom: 5px;padding-top: 5px;">
+        <div onclick="sairConta()" style="border-bottom: 2px solid black; display: flex;width: 90%;justify-content: start; align-items: center; height: 40px; padding-left: 30px;padding-bottom: 5px;padding-top: 5px;cursor: pointer;">
             <img src="https://cdn-icons-png.flaticon.com/512/1828/1828427.png" width="35w" height="35vh" />
             <h3 style="margin-left: 10px;">Sair da conta</h3>
         </div>
 
 
 
-    </div>
-
-    <form action="/gerar-agenda" method="post" class="fo2">
-        <div class="metade2">
-            <div class="dentro">
-
-                <div class="row">
-                    <h4 style="padding-right: 20px;">Qual data deseja alterar?</h4>
-                    <input type="date" id="etad" name="data" />
-                </div>
-
-                <div class="container">
-
-                    <div class="ia">
-                        <h4>Cafe da manha:</h4>
-                    </div>
-                    <div class="ia">
-                        <select name="cafeM" id="opcao">
-                            <option value="1">Sim</option>
-                            <option value="0">Não</option>
-                        </select>
-                    </div>
-
-                    <div class="ia">
-                        <h4>Almoço:</h4>
-                    </div>
-
-                    <div class="ia">
-                        <select name="almoco" id="opcao">
-                            <option value="1">Sim</option>
-                            <option value="0">Não</option>
-                        </select>
-                    </div>
-
-                    <div class="ia">
-                        <h4>Cafe da tarde:</h4>
-                    </div>
-                    <div class="ia">
-                        <select name="cafeT" id="opcao">
-                            <option value="1">Sim</option>
-                            <option value="0">Não</option>
-                        </select>
-                    </div>
-                </div>
-            </div> 
-        </div>
-    </form>
-
-    <div class="iop" style="margin-top: 20px;">
-        <button >Salvar alterações</button>
     </div>
 
     <div class="func">
@@ -113,7 +97,7 @@
 
 
         <div class="irg" id="config">
-            <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" width="25vw" height="25vh" id="config" />
+            <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" width="25vw" height="25vh"  />
             <p style="font-size: 13px;">Configuração</p>
         </div>
 
@@ -122,9 +106,14 @@
             <p style="font-size: 13px;">Desperdício</p>
         </div>
     </div>
-</body>
-<script src="{{url_for('static',  filename = 'js/config.js')}}"></script>
-<script src="{{url_for('static',  filename = 'js/index.js')}}"></script>
 
+
+</body>
+
+<script src="{{url_for('static', filename= 'js/index.js')}}"></script>
+<script src="{{url_for('static', filename= 'js/slide.js')}}"></script>
+<script src="{{url_for('static', filename= 'js/config.js')}}"></script>
+<script src="{{url_for('static', filename= 'js/iconUser.js')}}"></script>
+<script src="{{url_for('static', filename= 'js/mariane.js')}}"></script>
 
 </html>

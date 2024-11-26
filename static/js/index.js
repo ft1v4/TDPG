@@ -2,29 +2,29 @@ const btng = document.getElementById('btng');
 const form1 = document.getElementById('form1');
 const btnfechar = document.getElementById('btnfechar');
 const boxCOM = document.querySelector('.boxCOM');
-const cardapioBTN = document.getElementById('cardapio')
-const homeBTN = document.getElementById('home')
-const desperdicioBTN = document.getElementById('desperdicio')
-const btnAlterar = document.getElementById('ioio')
-const btnSalvar = document.getElementById('ioio2')
+// const btnAlterar = document.getElementById('ioio')
+// const btnSalvar = document.getElementById('ioio2')
 
 
-
-cardapioBTN.addEventListener('click', () => {
-    console.log('ola')
+function cardapio(){
     window.location = '/agenda'
-})
+}
 
-
-homeBTN.addEventListener('click', () => {
-    console.log('ola')
+function home(){
     window.location = '/home'
-})
+}
 
-desperdicioBTN.addEventListener('click',()=>{
-    console.log('teste')
-    window.location = '/desperdicio'
-})
+function homeAdm(){
+    window.location = '/adm'
+}
+
+function desperdicio(){
+     window.location = '/desperdicio'
+}
+
+function desperdicioAluno(){
+     window.location = '/desperdicioAluno'
+}
 
 function previewImage(event) {
     const imagePreview = document.getElementById('image-preview');
@@ -54,6 +54,14 @@ function areFieldsFilled() {
 
 
     return imageInput.files.length > 0 && dataInicial.value && dataFinal.value;
+}
+
+function sairConta(){
+    window.location = '/'
+}
+
+function adicionarCardapio(){
+    window.location = '/adicionarCardapio'
 }
 
 // form1.addEventListener('submit', (e) => {

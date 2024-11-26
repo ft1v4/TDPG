@@ -1,5 +1,5 @@
 import pythonBanco
-from flask import Flask, render_template, redirect, url_for, request, send_from_directory
+from flask import Flask, render_template, redirect, url_for, request, send_from_directory , jsonify 
 app = Flask(__name__)
 
 
@@ -7,19 +7,21 @@ app = Flask(__name__)
 def home():
     return render_template('login.html')
 
+
+# Rotas user
 @app.route('/home')
 def RHome():
-    return render_template('home.html')
+    return render_template('user/home.html')
 
 @app.route('/refeicaoAgendada', methods=['POST'])
 def refeicaoAgendada():
     dados = request.get_json()
     id = dados.get('id_usuario')
     
-    # Extrair as informações das refeições
+   
     refeicoes = dados.get('refeicoes', [])
     
-    # Criar uma lista com as informações separadas
+ 
     refeicoes_separadas = []
     for refeicao in refeicoes:
         data = refeicao.get('data')
@@ -39,11 +41,16 @@ def refeicaoAgendada():
     print(refeicoes_separadas)
     print(dados)
     
-    return render_template('home.html')
+    
+    return render_template('user/home.html')
 
-@app.route('/teste')
-def teste():
-    return render_template('teste.html')
+@app.route('/desperdicioAluno')
+def desperdicioAluno():
+    return render_template('user/pagDespAluno.html')
+
+@app.route('/adicionarCardapio')
+def adicionar_cardapio():
+    return render_template('adm/adicionarCardapio.html')
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
@@ -65,12 +72,7 @@ def upload():
         else:
             print("Nenhum arquivo de imagem enviado.")
 
-    return render_template('teste.html')
-
-@app.route('/imagens')
-def mostrar_imagens():
-    imagens = pythonBanco.select_imagens()
-    return render_template('imagens.html', imagens=imagens)
+    return render_template('adm/adicionarCardapio.html')
 
 @app.route('/desperdicio', methods=['POST', 'GET'])
 def desperdicio():
@@ -79,9 +81,9 @@ def desperdicio():
         data = request.form['data']
         print('value', value, "data", data)
         pythonBanco.insertDesperdicio(value, data)
-        return render_template('insert.html')
+        return render_template('adm/desperdicio.html')
 
-    return render_template('insert.html')
+    return render_template('adm/desperdicio.html')
 
 @app.route('/agenda', methods=['POST', 'GET'])
 def mostrar_agenda():
@@ -89,9 +91,8 @@ def mostrar_agenda():
       print('Gerou a agenda com sucesso')
       data = request.form['data']
       imagens_base64 = pythonBanco.puxardata(data)
-      return render_template('mariane.html', imagens_base64 = imagens_base64)
-    return render_template('mariane.html')
-
+      return render_template('adm/agenda.html', imagens_base64 = imagens_base64)
+    return render_template('adm/agenda.html')
 
 @app.route('/cardapio', methods=['POST', 'GET'])
 def mostrar_cardapio():
@@ -99,9 +100,9 @@ def mostrar_cardapio():
       print('Gerou a agenda com sucesso')
       data = request.form['data']
       imagens_base64 = pythonBanco.puxardata(data)
-      return render_template('home.html', imagens_base64 = imagens_base64)
-    return render_template('home.html')
-
+      return render_template('user/home.html', imagens_base64 = imagens_base64)
+      
+    return render_template('user/home.html')
 
 @app.route('/gerar-agenda',methods=['POST','GET'])
 def gerarAgenda():
@@ -116,17 +117,10 @@ def gerarAgenda():
        
     return render_template('gerarAgenda.html')
 
-@app.route('/funcionario')
-def funcionario():
-    return render_template('funcionario.html')
+@app.route('/adm')
+def adm():
+    return render_template('adm/adm.html')
    
-@app.route('/desperdicioAluno')
-def desperdicioAluno():
-    return render_template('pagDespAluno.html')
-
-
-        
-
 
 app.run(debug=True)
 

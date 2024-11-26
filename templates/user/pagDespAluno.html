@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desperdicio</title>
-    <link rel="stylesheet" href="{{url_for('static',filename = 'styleDespA.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename = 'style/styleDespA.css')}}">
 </head>
 
 <body>
@@ -13,7 +13,7 @@
 
     <div class="topo">
         <img src="https://www.sesisp.org.br/images/Sesi-SP.jpg" alt="logo" width="200vw" height="50vh"
-            style="margin-left: 40px; cursor: pointer;" class="home">
+            style="margin-left: 40px; cursor: pointer;" onclick="rotaHome()">
         <div class="back">
             <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="45vw" height="45vh"
                 style=" cursor: pointer;" id="user" />
@@ -86,8 +86,7 @@
 
 
 
-        <div
-            style="border-bottom: 2px solid black; display: flex;width: 90%;justify-content: start; align-items: center; height: 40px; padding-left: 30px;padding-bottom: 5px;padding-top: 5px;">
+        <div onclick="sairConta()" style="border-bottom: 2px solid black;cursor: pointer; display: flex;width: 90%;justify-content: start; align-items: center; height: 40px; padding-left: 30px;padding-bottom: 5px;padding-top: 5px;">
             <img src="https://cdn-icons-png.flaticon.com/512/1828/1828427.png" width="35w" height="35vh" />
             <h3 style="margin-left: 10px;">Sair da conta</h3>
         </div>
@@ -99,7 +98,7 @@
 
     <div class="func">
 
-        <div class="home"  style="display: flex;align-items: center;justify-content: center;cursor: pointer;flex-direction: column;">
+        <div onclick="home()" style="display: flex;align-items: center;justify-content: center;cursor: pointer;flex-direction: column;">
             <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="25vw" height="25vh" />
             <p style="font-size: 13px;">Home</p>
         </div>
@@ -110,7 +109,7 @@
             <p style="font-size: 13px;">Configuração</p>
         </div>
 
-        <div class="irg" id="desperdicioA">
+        <div class="irg" onclick="desperdicioAluno()">
             <img src="https://cdn-icons-png.flaticon.com/512/2907/2907313.png" width="25vw" height="25vh" />
             <p style="font-size: 13px;">Desperdício</p>
         </div>
@@ -120,10 +119,10 @@
 
 
 </body>
-<script src="{{url_for('static',filename = 'indexDesperdicioA.js')}}"></script>
-<script src="{{url_for('static',filename = 'slide.js')}}"></script>
-<script src="{{url_for('static',filename = 'iconUser.js')}}"></script>
-<!-- <script src="{{url_for('static',filename = 'user.js')}}"></script> -->
-<script src="{{url_for('static',filename = 'config.js')}}"></script>
+<script src="{{url_for('static',filename = 'js/index.js')}}"></script>
+<script src="{{url_for('static',filename = 'js/indexDesperdicioA.js')}}"></script>
+<script src="{{url_for('static',filename = 'js/slide.js')}}"></script>
+<script src="{{url_for('static',filename = 'js/iconUser.js')}}"></script>
+<script src="{{url_for('static',filename = 'js/config.js')}}"></script>
 
 </html>

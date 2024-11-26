@@ -6,9 +6,7 @@
 
 }
 
-body {
-    background-color: rgb(67, 67, 67);
-}
+
 
 .title {
     text-align: center;
@@ -20,7 +18,7 @@ body {
 }
 
 .boxF {
-    background-color: rgb(162, 162, 162);
+    background-color: #14713b;
     width: 40%;
     display: flex;
     justify-content: center;
@@ -63,7 +61,7 @@ body {
 .custom-file-upload {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #393939;
+    background-color: #20b15c;
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -72,18 +70,22 @@ body {
 }
 
 .custom-file-upload:hover {
-    background-color: #0c0c0c;
+    background-color: #082f18;
 }
 
 #btng {
     padding: 10px;
-    background-color: #393939;
+    background-color: #20b15c;
     color: white;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     border: none;
     margin-top: 30px;
+}
+
+#btng:hover{
+    background-color: #082f18;
 }
 
 #ver {
@@ -110,7 +112,7 @@ body {
     position: absolute;
     top: 35%;
     left: 3%;
-    background-color: rgb(162, 162, 162);
+    background-color: #20b15c;
     border-radius: 5px;
     padding: 20px;
     display: none;

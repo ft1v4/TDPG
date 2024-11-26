@@ -5,37 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
-    <!-- <link rel="stylesheet" href="../stylesUser/dias.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='style/styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='style/style.css')}}">
+
 </head>
 
 <body>
 
-
     <div class="topo">
         <img src="https://www.sesisp.org.br/images/Sesi-SP.jpg" alt="logo" width="200vw" height="50vh"
-            style="margin-left: 40px; cursor: pointer;" onclick="window.location = 'dias.html'">
+            style="margin-left: 40px; cursor: pointer;" onclick="home()">
         <div class="back">
             <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="45vw" height="45vh"
                 style=" cursor: pointer;" id="user" />
         </div>
     </div>
 
-
     <div style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
-        <h1 style="color: black;">Qual refeição deseja registrar ?</h1>
+        <h1 style="color: black; font-size: 32px;">Qual refeição deseja registrar ?</h1>
     </div>
-
 
     <div class="total">
 
-        <div class="metade">
+        <div class="metade1">
 
             <form action="/cardapio" method="post" class="fo">
                 <div class="ju">
                     <div class="li">
-                        <h2 style="margin-right: 10px;">Insira a data desejada :</h2>
+                        <h2 style="margin-right: 10px; font-size: 24px;">Insira a data desejada :</h2>
                         <input type="date" class="inp" name="data">
                         <button id="bH"><img src="https://cdn-icons-png.flaticon.com/512/64/64673.png" alt=""
                                 id="imgLL"></button>
@@ -43,7 +41,15 @@
                 </div>
 
                 <div class="ma">
+                    {%if imagens_base64 %}
                     <img src="data:image/jpeg;base64,{{ imagens_base64 }}" alt="" id="car">
+                    {%else%}
+                    <div id="car2">
+                        <h2>Imagem não encontrada</h2>
+                        <i class="bi bi-x-circle-fill" id="errorImage"></i>
+                    </div>
+                    {%endif%}
+
                 </div>
             </form>
         </div>
@@ -51,10 +57,12 @@
 
         <div class="metade">
             <!-- <h1 style="text-align: center;color: black;">Dados:</h1>   -->
-            <h5>Id usuario</h5>
-            <input type="number" id="userID">
-            <h5>Data</h5>
-            <input type="date" id="dataR" onchange="validar()">
+            <div id="divForms">
+                <h5>Id usuario</h5>
+                <input type="number" id="userID">
+                <h5>Data</h5>
+                <input type="date" id="dataR" onchange="validar()">
+            </div>
 
             <!-- <div id="divDIAS" style="display: none;">
                 <div id="divDentro">
@@ -108,9 +116,18 @@
             </div> -->
 
             <div id="diasSemana" style="display: none;">
-                <h3 style="margin:  0 auto;">Escolha as refeições:</h3>
+                <h3 style="margin:  0 auto;text-align: center;font-size: 25px;">Escolha as refeições:</h3>
                 <div id="diasContainer"></div>
-                <button onclick="enviarDados()">Enviar Dados</button>
+                <div class="divBtnEnviar">
+                    <button onclick="enviarDados()" id="enviarBtn">Enviar Dados</button>
+                </div>
+            </div>
+            <div id="divConfirma">
+                <h3 style="font-size: 20px;">Refeição Registrada com sucesso</h3>
+                <i class="bi bi-check-circle-fill" style="font-size: 50px;color: green;margin-top: 10px;"></i>
+                <button class="btnFechar" onclick="fecharDiv()">Fechar</button>
+
+
             </div>
 
 
@@ -139,8 +156,7 @@
         </div>
 
 
-        <div
-            style="border-bottom: 2px solid black; display: flex;width: 90%;justify-content: start; align-items: center; height: 40px; padding-left: 30px;padding-bottom: 5px;padding-top: 5px;">
+        <div onclick="sairConta()" style="border-bottom: 2px solid black; display: flex;width: 90%;justify-content: start; align-items: center; height: 40px; padding-left: 30px;padding-bottom: 5px;padding-top: 5px;cursor: pointer;">
             <img src="https://cdn-icons-png.flaticon.com/512/1828/1828427.png" width="35w" height="35vh" />
             <h3 style="margin-left: 10px;">Sair da conta</h3>
         </div>
@@ -151,32 +167,33 @@
 
 
     <div class="func">
-        <div class="irg" id="home">
+        <div class="irg" onclick="home()">
             <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width="25vw" height="25vh" />
-            <p style="font-size: 13px;">Home</p>
+            <p style="font-size: 13px;margin-bottom: 0;">Home</p>
         </div>
 
-        <div class="irg">
-            <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" width="25vw" height="25vh" id="config" />
-            <p style="font-size: 13px;">Configuração</p>
+        <div class="irg" id="config">
+            <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" width="25vw" height="25vh"  />
+            <p style="font-size: 13px; margin-bottom: 0;">Configuração</p>
         </div>
 
-        <div class="irg" id="desperdicioA">
+        <div class="irg" onclick="desperdicioAluno()">
             <img src="https://cdn-icons-png.flaticon.com/512/2907/2907313.png" width="25vw" height="25vh" />
-            <p style="font-size: 13px;">Desperdício</p>
+            <p style="font-size: 13px;margin-bottom: 0;">Desperdício</p>
         </div>
     </div>
 
 
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="{{url_for('static',filename = 'refei.js')}}"></script>
-<script src="{{url_for('static',filename = 'index.js')}}"></script>
-<script src="{{url_for('static',filename = 'indexDesperdicioA.js')}}"></script>
-<script src="{{url_for('static',filename = 'index.js')}}"></script>
-<script src="{{url_for('static',filename='slide.js')}}"></script>
-<script src="{{url_for('static',filename='iconUser.js')}}"></script>
-<script src="{{url_for('static',filename='user.js')}}"></script>
-<script src="{{url_for('static',filename='config.js')}}"></script>
+<script src="{{url_for('static',filename = 'js/refei.js')}}"></script>
+<script src="{{url_for('static',filename = 'js/index.js')}}"></script>
+<script src="{{url_for('static',filename = 'js/indexDesperdicioA.js')}}"></script>
+<script src="{{url_for('static',filename = 'js/index.js')}}"></script>
+<script src="{{url_for('static',filename='js/slide.js')}}"></script>
+<script src="{{url_for('static',filename='js/iconUser.js')}}"></script>
+<script src="{{url_for('static',filename='js/user.js')}}"></script>
+<script src="{{url_for('static',filename='js/config.js')}}"></script>
 
 </html>
