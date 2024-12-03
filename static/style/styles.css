@@ -53,7 +53,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
     overflow: hidden;
-  }
+}
 
 .duas {
     display: flex;
@@ -165,7 +165,7 @@
 .metade {
     margin-top: 1.5%;
     width: 50%;
-    height: 500px;
+    height: 300px;
 }
 
 .carrossel {
@@ -425,6 +425,9 @@ input:checked+.slider:before {
     border: 2px solid black;
     font-size: 20px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #btn:hover {
@@ -579,7 +582,7 @@ input:checked+.slider:before {
     height: 450px;
     justify-content: center;
     align-items: center;
-    
+
 
 }
 
@@ -614,7 +617,7 @@ input:checked+.slider:before {
     box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
 }
 
-#btnAdicionar{
+#btnAdicionar {
     background-color: #20b15c;
     border-radius: 5px;
     border: none;
@@ -623,7 +626,38 @@ input:checked+.slider:before {
     cursor: pointer;
 }
 
-#errorImage{
+#btnAlterar {
+    background-color: #20b15c;
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+#btnSalvarAlt {
+    background-color: #20b15c;
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+#fechar {
+    background-color: #20b15c;
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+    width: 80px;
+}
+
+#errorImage {
     color: red;
     font-size: 50px;
     margin-top: 20px;
@@ -653,10 +687,10 @@ input:checked+.slider:before {
 
 .dentro {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     background-color: #d9d9d9;
-    width:30%;
+    width: 30%;
     height: 40vh;
     padding-left: 10px;
     border-radius: 8px;
@@ -688,24 +722,24 @@ input:checked+.slider:before {
 
 }
 
-#etad{
+#etad {
     border-radius: 5px;
     border: 1px solid black;
     padding: 3px;
 }
 
-#opcao{
+#opcao {
     border-radius: 5px;
     border: 1px solid black;
     padding: 3px;
 }
 
-.metade2{
+.metade2 {
     width: 100%;
     height: 100%;
 }
 
-#BT{
+#BT {
     width: 35px;
     height: 35px;
     background-color: #20b15c;
@@ -715,4 +749,35 @@ input:checked+.slider:before {
     border-radius: 8px;
     border: none;
     cursor: pointer;
+}
+
+
+.boxDeuCerto {
+    position: absolute;
+    width: 400px;
+    height: 250px;
+    background-color:white;
+    margin: 0 auto;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 40px;
+
+}
+
+.alinha{
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#right{
+    color: green;
+    font-size: 70px;
+    margin-top: 20px;
 }

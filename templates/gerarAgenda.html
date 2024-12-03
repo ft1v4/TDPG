@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gerar agenda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="{{url_for('static' , filename='style/styles.css')}}">
 </head>
 
@@ -12,7 +13,7 @@
 
     <div class="topo">
         <img src="https://www.sesisp.org.br/images/Sesi-SP.jpg" alt="logo" width="200vw" height="50vh"
-         style="margin-left: 40px; cursor: pointer;" onclick="homeAdm()">
+            style="margin-left: 40px; cursor: pointer;" onclick="homeAdm()">
         <div class="back">
             <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" width="45vw" height="45vh"
                 style=" cursor: pointer;" id="user" />
@@ -49,6 +50,15 @@
 
 
     </div>
+
+    <div class="alinha" style="display: none;" >
+        <div class="boxDeuCerto">
+            <h3>Alteraçoes realizadas com sucesso !</h3>
+            <i class="bi bi-check-circle-fill" id="right"></i>
+            <button id="fechar" onclick="fecharCom()">Fechar</button>
+        </div>
+    </div>
+
 
     <form action="/gerar-agenda" method="post" class="fo2">
         <div class="metade2">
@@ -91,14 +101,16 @@
                             <option value="0">Não</option>
                         </select>
                     </div>
+                    <div style="margin:  0 auto;">
+                        <button id="btnSalvarAlt">Salvar alterações</button>
+                    </div>
                 </div>
-            </div> 
+
+
+            </div>
         </div>
     </form>
 
-    <div class="iop" style="margin-top: 20px;">
-        <button >Salvar alterações</button>
-    </div>
 
     <div class="func">
         <div class="irg" onclick="homeAdm()">

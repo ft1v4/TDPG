@@ -4,26 +4,36 @@ const btnfechar = document.getElementById('btnfechar');
 const boxCOM = document.querySelector('.boxCOM');
 // const btnAlterar = document.getElementById('ioio')
 // const btnSalvar = document.getElementById('ioio2')
+const divVerImg = document.querySelector('.boxIMAGE')
 
 
-function cardapio(){
+function cardapio() {
     window.location = '/agenda'
 }
 
-function home(){
+function fecharCom() {
+    const divAlinha = document.querySelector('.alinha')
+    divAlinha.style.display = 'none'
+}
+
+function gerarAgenda() {
+    window.location = '/gerar-agenda'
+}
+
+function home() {
     window.location = '/home'
 }
 
-function homeAdm(){
+function homeAdm() {
     window.location = '/adm'
 }
 
-function desperdicio(){
-     window.location = '/desperdicio'
+function desperdicio() {
+    window.location = '/desperdicio'
 }
 
-function desperdicioAluno(){
-     window.location = '/desperdicioAluno'
+function desperdicioAluno() {
+    window.location = '/desperdicioAluno'
 }
 
 function previewImage(event) {
@@ -56,29 +66,38 @@ function areFieldsFilled() {
     return imageInput.files.length > 0 && dataInicial.value && dataFinal.value;
 }
 
-function sairConta(){
+
+function sairConta() {
     window.location = '/'
 }
 
-function adicionarCardapio(){
+function adicionarCardapio() {
     window.location = '/adicionarCardapio'
 }
 
-// form1.addEventListener('submit', (e) => {
-//     e.preventDefault()
+form1.addEventListener('submit', (e) => {
+    e.preventDefault()
 
 
-//     if (areFieldsFilled()) {
-//         boxCOM.classList.toggle('boxCOM_flex')
-//     } else {
-//         boxCOM.remove()
-//     }
-// }
-// )
+    if (areFieldsFilled()) {
+        boxCOM.classList.toggle('boxCOM_flex')
+        divVerImg.style.display = 'block'
+    } else {
+        boxCOM.remove()
+    }
+}
+)
 
-// btnfechar.addEventListener('click', () => {
-//     boxCOM.remove('boxCOM_flex')
+btnfechar.addEventListener('click', () => {
+    boxCOM.remove('boxCOM_flex')
+    divVerImg.style.display = 'none'
+})
 
-// })
 
+function aparece_so() {
+    const divDeuCerto = document.querySelector('.alinha')
 
+    divDeuCerto.style.display = 'flex'
+   
+
+}

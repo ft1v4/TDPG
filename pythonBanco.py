@@ -79,9 +79,17 @@ def inserir_refeiçoes(data,id,cafe,almoco,tarde):
     cafe2 = int(cafe)
     almoco2 = int(almoco)
     tarde2 = int(tarde)
-    # sql = (f"insert into REFEICAO_AGENDADA(id_data,id_usuario,cafe_manha,almoco,cafe_tarde) values (?,?,?,?,?)")
-    # cursor.execute(sql,(data,id,cafe2,almoco2,tarde2))
-    # cursor.commit()
+    sql = (f"insert into REFEICAO_AGENDADA(id_data,id_usuario,cafe_manha,almoco,cafe_tarde) values (?,?,?,?,?)")
+    cursor.execute(sql,(data,id,cafe2,almoco2,tarde2))
+    cursor.commit()
     print('COLOCOU NO BANCO',data,id,cafe2,almoco2,tarde2)
 
                    
+def inserir_alteracao_cardapio(data,cafeM,almoco,cafeT):
+    print('INFORMAÇOES',data,cafeM,almoco,cafeT)
+    sql  = (f"insert into GERAR_AGENDA(id_data,habilitar_cafe_manha,habilitar_almoco,habilitar_cafe_tarde) values(?,?,?,?)")
+    cursor.execute(sql,(data,cafeM,almoco,cafeT))
+    cursor.commit()
+    print('Adicionou alteraçao na agenda')
+
+   

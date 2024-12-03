@@ -7,7 +7,6 @@ app = Flask(__name__)
 def home():
     return render_template('login.html')
 
-
 # Rotas user
 @app.route('/home')
 def RHome():
@@ -64,11 +63,9 @@ def upload():
 
         if imagem_file:
 
-            pythonBanco.inserir_imagem(imagem_file, data_inicial, data_final)
-            #inserir os dados da smn entre a dataInicial e dataFinal
-            # pythonBanco.inserir_datas(data_inicial,data_final)
+            # pythonBanco.inserir_imagem(imagem_file, data_inicial, data_final)
 
-            return redirect(url_for('teste'))
+            return render_template('adm/adicionarCardapio.html')
         else:
             print("Nenhum arquivo de imagem enviado.")
 
@@ -106,13 +103,13 @@ def mostrar_cardapio():
 
 @app.route('/gerar-agenda',methods=['POST','GET'])
 def gerarAgenda():
-    print(request.method)
     if request.method == 'POST':
         data = request.form['data']
         cafeManha = request.form['cafeM']
         almoco = request.form['almoco']
         cafeTarde = request.form['cafeT']
         print('Data', data, 'Cafe da Manha' , cafeManha, 'Almoco', almoco,  'Cafe da Tarde' , cafeTarde)
+        pythonBanco.inserir_alteracao_cardapio(data,cafeManha,almoco,cafeTarde)
         return render_template('gerarAgenda.html')
        
     return render_template('gerarAgenda.html')
